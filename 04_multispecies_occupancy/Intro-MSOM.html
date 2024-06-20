@@ -859,8 +859,14 @@ or absence of another species</li>
 <div id="marginal-occupancy-probability-1" class="slide section level2">
 <h1>Marginal Occupancy Probability</h1>
 <p>Calculating marginal occupancy probability of one species involves
-summing over all possible values of the other. E.g., the marginal
-probability of occurrence of species 1 is:</p>
+summing over all possible values of the other. We can write the
+probability of any combination of 1 and 0 as:</p>
+<p><span class="math display">\[
+f(z_1,z_2) =
+\psi_{11}^{z_1z_2}\psi_{10}^{z_1(1-z_2)}\psi_{01}^{(1-z_1)z_2}\psi_{00}^{(1-z_1)(1-z_2)}
+\]</span></p>
+<p>We obtain the marginal probability of occurrence of species 1 by
+summing over all possible values of species 2:</p>
 <p><span class="math display">\[
 \begin{align}
 f(z_1) = &amp; \sum_{z_2 = 0}^1
@@ -875,7 +881,7 @@ f(z_1) = &amp; \sum_{z_2 = 0}^1
 Pr(z_1=1) = \psi_{11}+\psi_{10}
 \]</span></p>
 <p>Using the same method, we can also calculate the marginal probability
-species 2 is present is:</p>
+species 2 is present as:</p>
 <p><span class="math display">\[
 Pr(z_2=1) = \psi_{11} + \psi_{01}
 \]</span></p>
@@ -905,10 +911,10 @@ P(A|B) = \frac{P(A \cap B )}{P(B)}
 <ul>
 <li>In the previous slides, I demonstrate how to calculate marginal
 probabilities.</li>
-<li>The joint event will be the specific presence / absence of interest
-and will be a subset of the marginal event.</li>
+<li>The joint event will be the probability of the specific presence /
+absence of interest and will be a subset of the marginal event.</li>
 <li>For example, the probability species 1 is present, conditional on
-the present of species 2 can be calculated as:</li>
+the presence of species 2, can be calculated as:</li>
 </ul>
 <p><span class="math display">\[
 \psi_{1|2} = \frac{\psi_{11}}{\psi_{11} + \psi_{01}}
